@@ -6,7 +6,7 @@ import React, {Component} from 'react'
       return(
         <div>
         
-        
+        <h1>Beru</h1>
         
         </div>
 )

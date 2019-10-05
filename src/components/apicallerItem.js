@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-
+import APICaller from './apicaller'
   export default function(props){
       
     
-        const { name, description, thumb_image_url, logo } = props.item;
+    // const{name, height, mass,hair_color,birth_year, eye_color, gender, homeworld, skin_color, species, starships,url,vehicles} = this.props;
       return(
         <div>
         

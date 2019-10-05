@@ -4,17 +4,21 @@ import {Link} from "react-router-dom"
 
 import ApiItem from "./apicallerItem"
   export default class APICaller extends Component{
-   constructor(){
+   constructor(props){
        super()
        
        this.state= {
-           data: []
+           data: [],
+           
        }
+       this.props = props;
    }
    
     
-    getApiData = () =>{
-        axios
+    getApiData = async () =>{
+        
+       await axios
+        
             .get('https://swapi.co/api/people/')
             .then(res =>{
                 console.log(res.data.results)
@@ -29,6 +33,7 @@ import ApiItem from "./apicallerItem"
     }
     handleRandId = () =>{
         let idTags = []
+       
         for(let i = 0; i < 10; i++){
             
             
@@ -49,18 +54,40 @@ import ApiItem from "./apicallerItem"
           
       });
     }
+
+    handleGetKeys = () =>{
+        let objKeys = []
+        return this.state.data.map(item => {
+                      
+             
+            if (objKeys.length < 16){
+                for(let i in Object.keys(item)[0]){
+                    objKeys.push(Object.keys(item)[i])
+                }
+            }
+            
+              return objKeys
+          });
+          
+          
+    }
     componentDidMount(){
         this.getApiData()
     }
+    
    
     render(){
-        
+        console.log(
+            this.state.data[0]
+            
+        )
          
       return(
+          
         <div>
         
         {this.portfolioItems()}
-        
+        <h1>{this.props.name}</h1>
         </div>
 )
 }
