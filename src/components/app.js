@@ -3,8 +3,8 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 
 import APICaller from "./apicaller"
 import Navigation from "./navigation"
-import C3PO from './c3po'
-import Home from './home'
+import Luke from './pages/luke'
+import Home from './pages/home'
 export default class App extends Component {
   constructor(){
     super()
@@ -19,7 +19,7 @@ export default class App extends Component {
 
         <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/1" component={C3PO}/>
+        <Route path="/0" component={Luke}/>
 
         </Switch>
       </div>

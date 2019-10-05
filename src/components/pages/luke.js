@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
-  export default class C3PO extends Component{
+  export default class Luke extends Component{
     render(){
 
       return(
         <div>
         
-        <h1>c3po</h1>
+        <h1>Luke Skywalker</h1>
         
         </div>
 )

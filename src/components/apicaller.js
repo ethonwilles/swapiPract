@@ -28,19 +28,24 @@ import ApiItem from "./apicallerItem"
             })
     }
     handleRandId = () =>{
-        for(let i = 0; i < this.state.data.length; i++){
-            let rannum = Math.floor(Math.random() * this.state.data.length)
-            return rannum
+        let idTags = []
+        for(let i = 0; i < 10; i++){
+            
+            
+            idTags.push(i)
+            
         }
+        return idTags
     }
     portfolioItems = () => {
+        let idTags = this.handleRandId()
         
       return this.state.data.map(item => {
           
-            let num = 0
-            num += 1
-            console.log(num)
-        return <Link to={`/${this.handleRandId()}`}>{item.name}</Link>;
+        let id = idTags.shift()
+        
+         
+        return <Link to={`/${id}`}>{item.name}</Link>;
           
       });
     }
