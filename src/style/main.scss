@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%; // 1rem is 10px
+    background-image: url(../../static/assets/background.jpg);
 }
 
 *,
@@ -21,8 +22,73 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+
+
 .app {
-    margin-top: 2rem;
-    display: grid;
-    justify-items: center;
+    
+    display: flex;
+    justify-content: left;
+    flex: auto;
+    background-image: url(../../static/assets/background.jpg);
+    a{
+        text-decoration: none;
+        font-size: 1.25em;
+        font-weight: 600;
+        color: white;
+    }
+}
+
+.nav-wrapper{
+    
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex: inherit;
+    background-image: url(../../static/assets/background.jpg);
+    a{
+        font-family: 'Merriweather', serif;
+        text-decoration: none;
+        font-size: 1.25em;
+        font-weight: 500;
+        color: white;
+       &:active{
+           color: blue;
+           background-color: #cbcbcb;
+       }
+
+    }
+}
+
+.home-wrapper{
+    font-family: 'Merriweather', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1,h3{
+        font-size: 2em;
+        color: whitesmoke;
+        opacity: 75%;
+        padding: 5px 0px;
+        
+    }
+    h1{
+        font-size: 2em;
+        margin-top: 150px;
+    }
+}
+
+
+.info-wrapper{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+    h1{
+        color: white;
+        font-family: 'Merriweather', serif;
+    }
 }

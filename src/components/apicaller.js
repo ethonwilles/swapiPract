@@ -12,6 +12,8 @@ import ApiItem from "./apicallerItem"
            
        }
        this.props = props;
+       this.myRef = React.createRef();
+       
    }
    
     
@@ -21,7 +23,7 @@ import ApiItem from "./apicallerItem"
         
             .get('https://swapi.co/api/people/')
             .then(res =>{
-                console.log(res.data.results)
+                
                 this.setState({
                     data: res.data.results
                 })
@@ -50,7 +52,7 @@ import ApiItem from "./apicallerItem"
         let id = idTags.shift()
         
          
-        return <Link to={`/${id}`}>{item.name}</Link>;
+      return <Link to={`/${id}`} ref={this.myRef}>{item.name}</Link>;
           
       });
     }
@@ -69,26 +71,33 @@ import ApiItem from "./apicallerItem"
               return objKeys
           });
           
+
+    
           
     }
+    
     componentDidMount(){
         this.getApiData()
+        
     }
     
    
     render(){
-        console.log(
-            this.state.data[0]
-            
-        )
+        
          
       return(
           
         <div>
+        <div className='nav-wrapper'>
         
         {this.portfolioItems()}
+        
+        
+        </div>
         <h1>{this.props.name}</h1>
         </div>
+        
+        
 )
 }
 }
